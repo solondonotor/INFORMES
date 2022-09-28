@@ -31,7 +31,7 @@ for i in range(0, 10):
             if di < d:
                 d = di
                 num = k+1
-    parCercano1 = "P" + str(i+1) + " - P" + str(num)   # Almacenamos la respuesta en un string
+    parCercano1 = "P" + str(i+1) + "-P" + str(num)   # Almacenamos la respuesta en un string
     Parescercanos += [parCercano1]
     distancias += [d]
     #print(parCercano1, round(d, 2))                              # Mostramos los puntos cercanos con su distancia
@@ -73,9 +73,9 @@ while n2 < 601:
     n2 = n2 + 1
     if n2 % 2 == 0:
         Sec3.append(n2)
-    if n2 % 5 == 0:
+    elif n2 % 5 == 0:
         Sec3.append(n2)
-# print(Sec3)
+print(Sec3)
 
 listaDeListas = [Sec1, Sec2, Sec3]
 
@@ -185,7 +185,7 @@ UsosTaxi_Vuelta = {'Juan': [1, 1, 1, 0, 0 ], 'Camila': [1, 0, 0, 0, 0],
  'Esteban': [0, 0, 0, 1, 0], 'Angie': [1, 0, 1, 0, 0]}
 
 #Creamos un diccionario donde se irán acumulando lo que debe ir pagando cada persona
-DiccionarioPagos = {'Juan': 0, 'Camila':0,  'Jose': 0, 'Maria': 0, 'Esteban': 0, 'Angie': 0}
+diccionarioPagos = {'Juan': 0, 'Camila':0,  'Jose': 0, 'Maria': 0, 'Esteban': 0, 'Angie': 0}
 
 
 
@@ -212,9 +212,9 @@ for word, meaning in UsosTaxi_Ida.items():      # Recorremos cada persona
     for i in range(0, 5):                       # Recorremos los dias de la semana
         if meaning[i] == 1:                     # Si la persona va 
             v = 15000/totxdia_Ida[i]            # Se reparte entre los que van 
-            DiccionarioPagos[word] += round(v, 2)         # Y se los sumamos a la cuenta
+            diccionarioPagos[word] += round(v, 2)         # Y se los sumamos a la cuenta
         elif totxdia_Ida[i] == 0:               # Si nadie va ese día
-            DiccionarioPagos[word] += round(10000/6, 2)   # Se reparte el gasto
+            diccionarioPagos[word] += round(10000/6, 2)   # Se reparte el gasto
 
 #Calculo de Vuelta: Se repite el procedimiento
 
@@ -231,11 +231,11 @@ for word, meaning in UsosTaxi_Vuelta.items():
     for i in range(0, 5):
         if meaning[i] == 1:
             v = 15000/totxdia_V[i]
-            DiccionarioPagos[word] += v
+            diccionarioPagos[word] += v
         elif totxdia_V[i] == 0:
-            DiccionarioPagos[word] += 10000/6
+            diccionarioPagos[word] += 10000/6
 
-print(DiccionarioPagos)
+print(diccionarioPagos)
 
 
 ############# EJERCICIO 5 ###############
@@ -279,16 +279,16 @@ for i in range(len(Ventas)):
     Ventas[i][7]*(95)*0.02)
     Saldos[i] += round(Comision*1000, 2)
 
-CodigosAltosSalarios = []
+codigosAltosSalarios = []
 
 for j in range(0, 3):                   #Busca los 3 primeros con mayor saldo
     for n in range(len(Ventas)):        # Recorre la lista buscando el máximo
         if Saldos[n] == max(Saldos):    # Cuando encuentre el máximo
-            CodigosAltosSalarios += [Ventas[n][0]]     #Identifica a que codigo pertenece y le asigna el saldo
+            codigosAltosSalarios += [Ventas[n][0]]     #Identifica a que codigo pertenece y le asigna el saldo
             Saldos[n] = 0               #Renueva el máximo como 0 para que busque el siguiente
             break                       # Se rompe el ciclo cuando encuentre el máximo
 
-print(CodigosAltosSalarios)
+print(codigosAltosSalarios)
 
 
 
