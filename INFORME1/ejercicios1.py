@@ -2,6 +2,7 @@
 
 #Planteamos una matriz con los puntos a evaular
 
+from operator import index
 from platform import java_ver
 
 
@@ -17,7 +18,8 @@ P = [['p1', 2,   2,    3],
      ['p10', 2,  0,    0.5]]
 
 # Buscamos el punto a menor distancia para cada punto
-
+distancias =[]
+Parescercanos = []
 for i in range(0, 10):
     d = 100
     for k in range(0, 10):
@@ -29,9 +31,17 @@ for i in range(0, 10):
             if di < d:
                 d = di
                 num = k+1
-    ParCercano = "P" + str(i+1) + " - P" + str(num) + " ==>"    # Almacenamos la respuesta en un string
-    print(ParCercano, round(d, 2))                              # Mostramos los puntos cercanos con su distancia
- 
+    parCercano1 = "P" + str(i+1) + " - P" + str(num)   # Almacenamos la respuesta en un string
+    Parescercanos += [parCercano1]
+    distancias += [d]
+    #print(parCercano1, round(d, 2))                              # Mostramos los puntos cercanos con su distancia
+
+
+Minima_distancia = (min(distancias))
+p = distancias.index(Minima_distancia)
+
+parCercano = Parescercanos[p]
+#print(parCercano)
  ##################### EJERCICIO 2 ############################
 
 # 1. lista1 = [1,-1,1,-1,1,-1,1,-1,1,-1,1,-1,1,-1,1,-1,1,-1,1,-1,1,-1,1,-1,1,-1]
@@ -221,9 +231,9 @@ for word, meaning in UsosTaxi_Vuelta.items():
     for i in range(0, 5):
         if meaning[i] == 1:
             v = 15000/totxdia_V[i]
-            DiccionarioPagos[word] += round(v, 2)
+            DiccionarioPagos[word] += v
         elif totxdia_V[i] == 0:
-            DiccionarioPagos[word] += round(10000/6, 2)
+            DiccionarioPagos[word] += 10000/6
 
 print(DiccionarioPagos)
 
@@ -274,7 +284,7 @@ CodigosAltosSalarios = []
 for j in range(0, 3):                   #Busca los 3 primeros con mayor saldo
     for n in range(len(Ventas)):        # Recorre la lista buscando el máximo
         if Saldos[n] == max(Saldos):    # Cuando encuentre el máximo
-            CodigosAltosSalarios += [[Ventas[n][0], Saldos[n]]]     #Identifica a que codigo pertenece y le asigna el saldo
+            CodigosAltosSalarios += [Ventas[n][0]]     #Identifica a que codigo pertenece y le asigna el saldo
             Saldos[n] = 0               #Renueva el máximo como 0 para que busque el siguiente
             break                       # Se rompe el ciclo cuando encuentre el máximo
 
