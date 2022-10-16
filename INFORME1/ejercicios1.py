@@ -163,7 +163,7 @@ Cantidad_que_ganan = 0 #Contamos cuantos ganan
 for word, meaning in Notas1.items():
     if meaning >= 3: #Miramos quienes ganan
         Cantidad_que_ganan += 1
-        #print(f'{word}:{meaning}') 
+        print(f'{word}:{meaning}') 
 #print(Cantidad_que_ganan) #Cantidad de estudiantes que ganan así saquen 0
 
 #Para calular los que tienen posibilidades le restamos al total de estudiantes
