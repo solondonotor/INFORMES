@@ -1,9 +1,3 @@
-from os import sep
-
-
-
-
-
 nombre_completo = 'Sofia Londoño Toro'
 
 #____________ EJERCICIO 1 ___________________
