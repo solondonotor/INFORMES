@@ -473,10 +473,12 @@ def obtenerMultiplos(numero):
 
 def obtenerDivisores(numero):
     int(numero)
-    i = numero
+    i = numero-1
     divisores = []
     while i > 0:
         if numero%i == 0:
+            if i == 1:
+             break
             divisores.append(i)
         i -= 1
     return divisores
@@ -487,8 +489,10 @@ def obtenerNesimoFibonacci(N):
     for j in range(1,N):
         num_fibo = fibo[j] + fibo[j-1]
         fibo.append(num_fibo)
-    return fibo[N]
+    
+    return fibo[N-1] 
 funciones = [obtenerMultiplos, obtenerDivisores, obtenerNesimoFibonacci]
+
 
 #____________ EJERCICIO 5 ___________________       
  
