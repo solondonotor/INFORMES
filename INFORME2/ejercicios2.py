@@ -459,7 +459,7 @@ dineroRecaudado3D = (Sum3D_Niños_Semana*costosCine['3D']['NIÑO']['LUN-VIE']) +
 dineroRecaudado = dineroRecaudado2D + dineroRecaudado3D
 
 boletasVendidas = sum(Ventasxdia2D_Adultos)+ sum(Ventasxdia2D_Niños) + sum(Ventasxdia3D_Adultos) + sum(Ventasxdia3D_Niños)
-
+reporteCine = [boletasVendidas, dineroRecaudado]
 #____________ EJERCICIO 4 ___________________
 def obtenerMultiplos(numero):
     i = 1 
