@@ -482,7 +482,7 @@ def obtenerDivisores(numero):
             divisores.append(i)
         i -= 1
     return divisores
-
+print(obtenerDivisores(30))
 def obtenerNesimoFibonacci(N):
     int(N)
     fibo = [0,1]
