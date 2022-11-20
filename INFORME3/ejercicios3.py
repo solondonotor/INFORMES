@@ -200,5 +200,5 @@ def graficaGenerica(x, y):
      plt.legend()
      plt.show()
 
-
+graficaGenerica(x,y)
 
