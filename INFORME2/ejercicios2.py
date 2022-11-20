@@ -19,48 +19,95 @@ precios_dict = {'A001': 31000,
 precios = list(precios_dict.values())
 articulos = list(precios_dict.keys())
 
-
-ventas = ["A032-52Unidades", "B001-29Unidades", 
-          "A125-15Unidades", "A032-22Unidades",
-          "P009-25Unidades", "B005-20Unidades", 
-          "B001-19Unidades", "P009-31Unidades", 
-          "B005-22Unidades", "W307-15Unidades", 
-          "A011-31Unidades", "P019-18Unidades", 
-          "A011-20Unidades", "R001-20Unidades", 
-          "P019-19Unidades", "A001-12Unidades", 
-          "A125-20Unidades", "R001-31Unidades", 
-          "Z052-52Unidades", "W307-31Unidades", 
-          "Z025-42Unidades", "Z052-10Unidades", 
-          "Z278-30Unidades", "Z025-24Unidades", 
-          "Z278-21Unidades", "A001-31Unidades",
-          "A032-32Unidades", "B001-22Unidades",
-          "A125-11Unidades", "A032-12Unidades",
-          "P009-19Unidades", "B005-11Unidades",
-          "B001-19Unidades", "P009-21Unidades",
-          "B005-22Unidades", "W307-15Unidades",
-          "A011-31Unidades", "P019-18Unidades",
-          "A011-20Unidades", "R001-20Unidades",
-          "P019-19Unidades", "A001-12Unidades",
-          "A125-20Unidades", "R001-31Unidades",
-          "Z052-12Unidades", "W307-31Unidades",
-          "Z025-42Unidades", "Z052-10Unidades",
-          "Z278-30Unidades", "Z025-24Unidades",
-          "Z278-11Unidades", "A001-91Unidades"]
-
-ventas1 = sorted(ventas)   # Ordenamos alfabeticamente la base de datos
-unidades = [ ventas1[:4],  # Hacemos una lista con las listas por cada dato del elemento
-             ventas1[4:8],
-             ventas1[8:12],
-             ventas1[12:16],
-             ventas1[16:20],
-             ventas1[20:24],
-             ventas1[24:28],
-             ventas1[28:32],
-             ventas1[32:36],
-             ventas1[36:40],
-             ventas1[40:44],
-             ventas1[44:48],
-             ventas1[48:52]]
+#
+#ventas = ["A032-52Unidades", "B001-29Unidades", 
+#          "A125-15Unidades", "A032-22Unidades",
+#          "P009-25Unidades", "B005-20Unidades", 
+#          "B001-19Unidades", "P009-31Unidades", 
+#          "B005-22Unidades", "W307-15Unidades", 
+#          "A011-31Unidades", "P019-18Unidades", 
+#          "A011-20Unidades", "R001-20Unidades", 
+#          "P019-19Unidades", "A001-12Unidades", 
+#          "A125-20Unidades", "R001-31Unidades", 
+#          "Z052-52Unidades", "W307-31Unidades", 
+#          "Z025-42Unidades", "Z052-10Unidades", 
+#          "Z278-30Unidades", "Z025-24Unidades", 
+#          "Z278-21Unidades", "A001-31Unidades",
+#          "A032-32Unidades", "B001-22Unidades",
+#          "A125-11Unidades", "A032-12Unidades",
+#          "P009-19Unidades", "B005-11Unidades",
+#          "B001-19Unidades", "P009-21Unidades",
+#          "B005-22Unidades", "W307-15Unidades",
+#          "A011-31Unidades", "P019-18Unidades",
+#          "A011-20Unidades", "R001-20Unidades",
+#          "P019-19Unidades", "A001-12Unidades",
+#          "A125-20Unidades", "R001-31Unidades",
+#          "Z052-12Unidades", "W307-31Unidades",
+#          "Z025-42Unidades", "Z052-10Unidades",
+#          "Z278-30Unidades", "Z025-24Unidades",
+#          "Z278-11Unidades", "A001-91Unidades"]
+#
+ventas =   ["B005-22Unidades","W307-15Unidades","A011-31Unidades","P019-18Unidades","A011-20Unidades",
+            "R001-20Unidades","P019-19Unidades","A001-12Unidades","A125-20Unidades","R001-31Unidades",
+            "Z052-12Unidades","W307-31Unidades","Z025-42Unidades","Z052-10Unidades","A032-52Unidades",
+            "B001-29Unidades","A125-15Unidades","A032-22Unidades","P009-25Unidades","B005-20Unidades",
+            "B001-19Unidades","P009-31Unidades","B005-22Unidades","W307-15Unidades","A011-31Unidades",
+            "P019-18Unidades","A011-20Unidades","R001-20Unidades","P019-19Unidades","A001-12Unidades",
+            "A125-20Unidades","R001-31Unidades","Z052-52Unidades","W307-31Unidades","Z025-42Unidades",
+            "Z052-10Unidades","Z278-30Unidades","Z025-24Unidades","Z278-21Unidades","A001-31unidades",
+            "A032-32Unidades","B001-22Unidades","A125-11Unidades","A032-12Unidades","P009-19Unidades",
+            "B005-11Unidades","B001-19Unidades","B005-20Unidades","B001-19Unidades","P009-31Unidades",
+            "B005-22Unidades","W307-15Unidades","Z278-30Unidades","Z025-24Unidades","P009-21Unidades",
+            "Z278-30Unidades","Z025-24Unidades","Z278-11Unidades","A001-91unidades","A032-52Unidades",
+            "B001-29Unidades","A125-15Unidades","A032-22Unidades","P009-25Unidades","B005-20Unidades",
+            "B001-19Unidades","P009-31Unidades","B005-22Unidades","W307-15Unidades","A011-31Unidades",
+            "P019-18Unidades","A011-20Unidades","R001-20Unidades","P019-19Unidades","A001-12Unidades",
+            "A125-20Unidades","R001-31Unidades","Z052-52Unidades","W307-31Unidades","Z025-42Unidades",
+            "Z052-10Unidades","Z278-30Unidades","Z025-24Unidades","Z278-21Unidades","A001-31unidades",
+            "A032-32Unidades","B001-22Unidades","A125-11Unidades","A032-12Unidades","P009-19Unidades",
+            "B005-11Unidades","B001-19Unidades","P009-21Unidades","B005-22Unidades","W307-15Unidades",
+            "A011-31Unidades","P019-18Unidades","A011-20Unidades","R001-20Unidades","P019-19Unidades",
+            "A001-12Unidades","A125-20Unidades","R001-31Unidades","Z052-12Unidades","W307-31Unidades",
+            "Z025-42Unidades","Z052-10Unidades","Z278-30Unidades","Z025-24Unidades","Z278-11Unidades",
+            "A001-91unidades","A032-52Unidades","B001-29Unidades","A125-10Unidades","A011-31Unidades",
+            "P019-18Unidades","A011-20Unidades","R001-20Unidades","P019-19Unidades","A001-12Unidades",
+            "A125-20Unidades","R001-31Unidades","Z052-52Unidades","W307-31Unidades","Z025-42Unidades",
+            "Z052-10Unidades","Z278-30Unidades","Z025-24Unidades","Z278-21Unidades","A001-31unidades",
+            "A032-32Unidades","B001-22Unidades","A125-11Unidades","A032-12Unidades","P009-19Unidades",
+            "B005-11Unidades","B001-19Unidades","P009-21Unidades","B005-22Unidades","W307-15Unidades",
+            "A011-31Unidades","P019-18Unidades","A011-21Unidades","R001-20Unidades","P019-19Unidades",
+            "A001-12Unidades","A125-20Unidades","R001-31Unidades","Z052-15Unidades","W307-31Unidades",
+            "Z025-42Unidades","Z052-10Unidades","A032-22Unidades","P009-25Unidades","Z278-11Unidades",
+            "A001-91unidades"]
+ventas1 = sorted(ventas)
+for i in range(6,12):
+    ventas1[i] = ventas1[i].replace('unidades', 'Unidades')   # Ordenamos alfabeticamente la base de datos
+##unidades = [ ventas1[:4],  # Hacemos una lista con las listas por cada dato del elemento
+ #            ventas1[4:8],
+ #            ventas1[8:12],
+ #            ventas1[12:16],
+ #            ventas1[16:20],
+ #            ventas1[20:24],
+ #            ventas1[24:28],
+ #            ventas1[28:32],
+ #            ventas1[32:36],
+ #            ventas1[36:40],
+ #            ventas1[40:44],
+ #            ventas1[44:48],
+ #            ventas1[48:52]]
+unidades = [ventas1[:11],
+            ventas1[12:23],
+            ventas1[24:35],
+            ventas1[36:47],
+            ventas1[48:59],
+            ventas1[60:71],
+            ventas1[72:83],
+            ventas1[84:95],
+            ventas1[96:107],
+            ventas1[108:119],
+            ventas1[120:131],
+            ventas1[132:143],
+            ventas1[144:155]]
 
 
 
@@ -86,8 +133,9 @@ for j in unidadesN:
 
 for i in unidadesNN: # Eliminamos el nombre del articulo
     for j in i:
+        
         j.pop(0)
-
+print(unidadesNN)
 unidadesNNN = [] #Quitamos el numero del artículo de las listas
 for i in unidadesNN:
     a = []
@@ -106,7 +154,7 @@ unidades_totales = [] # Sumamos los items por cada articulo
 for i in unidadesNNNN:
     uni = sum(i)
     unidades_totales += [uni]
-
+print(unidades_totales)
 unidadesxprecios = [x*y for x,y in zip(precios,unidades_totales)] #Sacamos los totales por producto
 ventasTotal = sum(unidadesxprecios) #Totalizamos las ventas
 unidadesPorProducto = dict(zip(articulos, unidades_totales)) #Creamos el diccionario de unidades por producto
@@ -482,7 +530,7 @@ def obtenerDivisores(numero):
             divisores.append(i)
         i -= 1
     return divisores
-print(obtenerDivisores(30))
+
 def obtenerNesimoFibonacci(N):
     int(N)
     fibo = [0,1]
