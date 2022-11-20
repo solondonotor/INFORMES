@@ -1,6 +1,7 @@
 nombre_completo = "Sofía Londoño Toro"  
 import pandas as pd
 import numpy as np  
+import matplotlib.pyplot as plt
 # __________________ LEEMOS LA BASE DE DATOS ________________________________
 archivo = "estudiantes.csv"
 ruta = "/Mi unidad/Semestre 6/Informática III/INFORMES/INFORME3/" + archivo
@@ -165,14 +166,10 @@ reporteVentas = [ventasPorProducto, estadisticas, extremos]
 
 
 #____________________ CREACIÓN FUNCIÓN _______________________________
-x = np.arange(-3.5, 3.6, 0.01)                               # Datos tomados de analisis de Trabajo, del libro de
-y = (x**2)*np.exp(-x**2) # Métodos númericos de Chapra
-Tabla_xvsy = pd.DataFrame(data=y, index= x, columns= ['Trabajo'])
-derivada1 = np.diff(y)/np.diff(x) 
-derivada2da = np.diff(derivada1)/np.diff(x[:-1]) 
+x = np.arange(-3.5, 3.6, 0.01)                               
+y = (x**2)*np.exp(-x**2) 
 
 
-import matplotlib.pyplot as plt
 def graficaGenerica(x, y):
      #Valores numericos   
      y_derivadaOrden1 = np.diff(y)/np.diff(x)
